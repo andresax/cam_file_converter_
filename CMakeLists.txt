@@ -1,14 +1,14 @@
 
-cmake_minimum_required(VERSION 3.7)
+cmake_minimum_required(VERSION 3.5)
 
 project(converter)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
-find_package(Eigen3 REQUIRED)
+# find_package(Eigen3 REQUIRED NO_MODULE)
 
 include_directories(
-    ${EIGEN3_INCLUDE_DIRS}
+    eigen/
 )
 
 set(ref_MBC_SOURCE 

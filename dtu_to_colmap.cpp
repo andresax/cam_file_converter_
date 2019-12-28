@@ -15,15 +15,21 @@ const float cy = 605.18715;
 
 void dtu_to_cameras_txt(const std:: string & out_folder) {
 
+  std::cout<<"Creating DTU intrinsics file: "<<out_folder<<"/cameras.txt "<<std::flush;
   std::ofstream cameras_txt (out_folder+"/cameras.txt");
   //intrinsics calibration fixed
 
   cameras_txt << "0 PINHOLE " << w << " " << h << " " << fx << " " << fy << " " << cx << " " << cy<<std::endl;
   cameras_txt.close();
+  std::cout<<"   --->DONE"<<std::endl;
 } 
 
-void dtu_to_images_txt(const std:: string & pathImages,const std:: string & pathCalib, const std:: string & out_folder) {
+void dtu_to_images_txt(const std::string & pathImages,const std:: string & pathCalib, const std:: string & out_folder) {
 
+
+  std::cout<<"Creating DTU images file: "<<out_folder<<"/images.txt "<<std::endl;
+  std::cout<<"pathImages : "<<pathImages<<" "<<std::endl;
+  std::cout<<"pathCalib : "<<pathCalib<<" "<<std::endl;
 
   std::ofstream images_txt (out_folder+"/images.txt");
 
@@ -81,13 +87,17 @@ void dtu_to_images_txt(const std:: string & pathImages,const std:: string & path
   }
 
   images_txt.close();
+  std::cout<<"   --->DONE"<<std::endl;
 }
 
 
 void dtu_to_points_txt(const std:: string & out_folder){
 
+  std::cout<<"Creating DTU 3D Points file: "<<out_folder<<"/points3D.txt "<<std::flush;
+
   std::ofstream points_txt (out_folder+"/points3D.txt");
   points_txt.close();
+  std::cout<<"   --->DONE"<<std::endl;
 }
 
 
